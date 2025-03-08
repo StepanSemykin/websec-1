@@ -20,17 +20,32 @@ function setResult(resultNew, resultOld)
     document.querySelector('#result-old').innerHTML = resultOld;
 }
 
+function resetErrors() 
+{
+    document.getElementById("first-operator").classList.remove("error");
+    document.getElementById("second-operator").classList.remove("error");
+}
+
+function setError(element) 
+{
+    element.classList.add("error");
+}
+
 function calculate()
 {
     const { firstNum, secondNum, operation, resultOld } = getInputValues();
 
+    resetErrors();
+
     if (isNaN(firstNum)) 
     {
+        setError(document.getElementById("first-operator"));
         alert("Ошибка: Число 1 не введено");
         return;
     }
     if (isNaN(secondNum))
     {
+        setError(document.getElementById("second-operator"));
         alert("Ошибка: Число 2 не введено");
         return;
     }
@@ -50,6 +65,7 @@ function calculate()
         case "÷" :
             if (Math.abs(secondNum) < Number.EPSILON)
             {
+                setError(document.getElementById("second-operator"));
                 alert("Ошибка: Деление на 0"); 
                 return;
             } 

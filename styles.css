@@ -1,18 +1,86 @@
 .main-container 
 {
-    background-color: lightgreen; 
+    color: rgb(255, 54, 54);
+    background-color: rgb(187, 255, 187); 
     margin: 0 auto;
     margin-top: 60px;
     padding: 0 10px 10px 10px;
     height: fit-content;
-    max-width: 700px;
-    display: flex;
-    flex-direction: column;
+    max-width: 600px;
+    border-radius: 10px; 
 }
 
 .top-content
 {
     display: flex;
     flex-direction: column;
+    align-items: center; 
+    text-align: center;
 }
 
+.calculator 
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-calculate 
+{
+    margin-top: 20px; 
+    padding: 5px 5px;
+    width: 20%; 
+    min-width: 10%;
+    align-self: center; 
+}
+
+input[type="number"],
+select#operation,
+.button-calculate,
+.result 
+{    
+    color: rgb(255, 54, 54);
+    background-color: rgb(187, 255, 187); 
+    border: 2px solid rgb(255, 54, 54);
+    padding: 5px;
+    border-radius: 5px; 
+    border-style: dashed;
+    outline: none;
+    font-weight: bold;
+}
+
+.result 
+{    
+    width: 100%;
+    margin-top: 20px;
+    padding: 0; 
+}
+
+select#operation
+{
+    width: 15%;
+}
+
+input[type="number"]
+{
+    width: 35%;
+}
+
+input[type="number"]::placeholder,
+select#operation::placeholder 
+{
+    color: rgb(255, 54, 54);
+    font-weight: bold;
+}
+
+input[type="number"].error,
+select#operation.error 
+{
+    background-color: rgb(255, 54, 54);
+    background-color: #ffe6e6;
+}
+
+#result-old 
+{
+    opacity: 0.5;
+}
