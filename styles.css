@@ -84,3 +84,43 @@ select#operation.error
 {
     opacity: 0.5;
 }
+
+@media (max-width: 600px) 
+{
+    .calculator 
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="number"],
+    select#operation 
+    {
+        width: 100%; 
+        margin-bottom: 10px;
+    }
+
+    .button-calculate 
+    {
+        width: 40%; 
+        margin-top: 0;
+    }
+
+    select#operation
+    {   
+        width: 25%;
+    }
+
+    .result 
+    {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .main-container 
+    {
+        padding: 20px;
+    }
+}
